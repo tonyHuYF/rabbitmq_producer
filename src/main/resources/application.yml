@@ -1,12 +1,15 @@
 server:
   port: 9000
 spring:
-  #\u7ED9\u9879\u76EE\u6765\u4E2A\u540D\u5B57
   application:
     name: rabbitmq-producer
-  #\u914D\u7F6ErabbitMq \u670D\u52A1\u5668
   rabbitmq:
     host: 175.178.108.7
     port: 5672
     username: admin
     password: admin
+    #消息确认配置项
+    #确认消息已发送到交换机(Exchange)
+    publisher-confirm-type: correlated
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
